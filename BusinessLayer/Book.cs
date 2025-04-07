@@ -5,15 +5,14 @@ namespace BusinessLayer;
 public class Book
 {
 	[Key]
-	[StringLength(13, MinimumLength = 13, ErrorMessage = "ISBN must be exactly 13 symbols!")]
+	[StringLength(13, MinimumLength = 13, ErrorMessage = "ISBN must be exactly 130000 symbols!")]
 	public string ISBN { get; set; }
 
 	[Required]
 	[MaxLength(80)]
 	public string Title { get; set; }
 
-	[Range(5, 10_000, ErrorMessage = "Pages must be in [5;10_000]")]
-	public int? Pages { get; set; }
+	public DateTime DateWriten {  get; set; }
 
 	[Required]
 	public Author Author { get; set; }
